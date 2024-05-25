@@ -1,4 +1,5 @@
 package org.example.entity;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
 import java.util.List;
@@ -14,10 +15,10 @@ public class Category {
     private String name;
 
     @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference
     private List<Product> products;
 
-    public Category() {
-    }
+    public Category() {}
 
     public Category(String name) {
         this.name = name;

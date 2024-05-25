@@ -1,5 +1,7 @@
 package org.example.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -14,6 +16,7 @@ public class Supplier {
     private String name;
 
     @ManyToMany(mappedBy = "suppliers")
+    @JsonBackReference
     private List<Product> products;
     
     public Supplier() {

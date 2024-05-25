@@ -1,4 +1,6 @@
 package org.example.entity;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
 import java.util.List;
@@ -16,18 +18,19 @@ public class Product {
 
     @ManyToOne
     @JoinColumn(name = "category_id")
+    @JsonBackReference
     private Category category;
 
     @ManyToMany
     @JoinTable(
             name = "product_supplier",
             joinColumns = @JoinColumn(name = "product_id"),
-            inverseJoinColumns = @JoinColumn(name = "supplier")
+            inverseJoinColumns = @JoinColumn(name = "supplier_id")
     )
+    @JsonManagedReference
     private List<Supplier> suppliers;
 
-    public Product() {
-    }
+    public Product() {}
 
     public Product(String name, double price, Category category) {
         this.name = name;

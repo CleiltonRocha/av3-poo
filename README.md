@@ -91,7 +91,7 @@ To search for products by category, send a GET request to **api/products/categor
 ## Team
  - Cleilton Rocha
  - Bruno Lima
- - David
+ - David Herbet
 
 
 

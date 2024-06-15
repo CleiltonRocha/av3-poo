@@ -88,6 +88,11 @@ To fetch all suppliers linked to a product, send a GET request to **/api/product
 ## Searching for Products by Category
 To search for products by category, send a GET request to **api/products/category/{categoryId}**.
 
+## Team
+ - Cleilton Rocha
+ - Bruno Lima
+ - David
+
 
 
 
